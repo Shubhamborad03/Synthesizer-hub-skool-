@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <!-- Link Font Awesome first -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Link the main CSS (MAKE SURE this file is named popup.css) -->
+    <link rel="stylesheet" href="popup.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Main container -->
+    <div class="dashboard-main-container">
+
+        <h1 class="dashboard-heading">Synthesizer Hub</h1>
+
+        <!-- Daily Quote Section -->
+        <section id="daily-quote-section" class="dashboard-section quote-section">
+            <h2><i class="fas fa-quote-left"></i> Quote of the Day</h2>
+            <p id="quote-text">Loading quote...</p>
+        </section>
+
+        <!-- Daily Video Section -->
+        <section id="daily-video-section" class="dashboard-section video-section">
+            <h2><i class="fab fa-youtube"></i> Video of the Day</h2>
+            <div id="video-player-wrapper">
+                <p id="video-loading" class="loading-text">Loading video...</p>
+            </div>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section id="todo-section" class="dashboard-section todo-section">
+            <h2><i class="fas fa-tasks"></i> To-Do List</h2>
+            <form id="todo-form" class="input-field">
+                <input type="text" id="todo-input" placeholder="Add new task..." required/>
+                <button type="submit" title="Add Task">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>
+            <ul id="todo-list" class="task-list">
+                <p class="loading-text no-items">Loading tasks...</p>
+            </ul>
+        </section>
+
+        <title>Skool DM Tags & Follow-ups</title>
+        <link rel="stylesheet" href="styles.css"> <!-- Link the CSS -->
+        <style>
+          /* Optional: Add specific styles here if needed, overriding styles.css */
+          body { width: 380px; } /* Ensure consistent width */
+          h2 { margin-top: 0; margin-bottom: 15px; text-align: center; }
+          #followups-section h3, #tagged-profiles-section h3 {
+             font-size: 16px;
+             border-bottom: 1px solid #dee2e6;
+             padding-bottom: 5px;
+             margin-top: 20px;
+             margin-bottom: 10px;
+          }
+           #followups-section h3:first-of-type, #tagged-profiles-section h3:first-of-type {
+             margin-top: 0;
+          }
+           #followups-list { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px dashed #eee; }
+    
+          /* Styles from styles.css will be applied, these are just examples */
+    
+        </style>
+    </head>
+    <body>
+<!-- *** START NEW WRAPPER SECTION *** -->
+<section id="skool-features-section" class="dashboard-section skool-section">
+    <h2>Follow-ups & Tags</h2> <!-- Move H2 inside -->
+
+    <!-- Follow-up Section -->
+    <div id="followups-section">
+        <h3>Scheduled Follow-ups</h3>
+        <div id="followups-list">
+            <!-- Follow-ups will be loaded here by popup.js -->
+            <p class="no-tags">Loading follow-ups...</p>
+        </div>
+    </div>
+
+    <!-- Tagged Profiles Section -->
+     <div id="tagged-profiles-section">
+        <h3>Tagged Profiles</h3>
+        <div id="tagged-list">
+            <!-- Tagged profiles will be loaded here by popup.js -->
+            <p class="no-tags">Loading tags...</p>
+        </div>
+     </div>
+
+     <!-- Keep Tag Manager Button/Div outside the main content flow if desired -->
+     <!-- Or move inside if it should be part of this section's background/padding -->
+
+</section>
+ <!-- *** END NEW WRAPPER SECTION *** -->
+    
+    
+        <!-- Tag Manager Button and Div -->
+        <button id="manage-tags-btn" style="width: 100%; padding: 10px; margin-top: 20px; background-color: #e9ecef; border: 1px solid #dee2e6; border-radius: 6px; cursor: pointer; font-weight: 600; color: #495057;">Manage Tags</button>
+        <div id="tag-manager" style="display:none; margin-top: 12px; padding: 15px; border: 1px solid #dee2e6; border-radius: 8px; background-color: #fff;">
+            <!-- Tag manager content will be loaded here by popup.js -->
+        </div> <!-- End dashboard-main-container -->
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 25px 0 15px 0;">
+        <p id="credit-line" style="text-align: center; font-size: var(--font-size-small); color: var(--text-color-light);">
+            Message me if you find any Bugs to fix! This Extension is created by
+            <a href="https://www.skool.com/@shubham-borad-3643?g=synthesizer" target="_blank" title="Visit Shubham Borad's Skool Profile">Shubham Borad</a>
+        </p>
+
+    <!-- Scripts -->
+    <!-- *** ADDED JSConfetti Library *** -->
+    <script src="js-confetti.browser.js" defer></script>
+    <!-- Main Popup Script -->
+    <script src="popup.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+{
+  "manifest_version": 3,
+  "name": "Synthesizer Hub",
+  "version": "2.0",
+  "description": "Unified dashboard with Daily Quote, Video, To-Do List, Skool DM Tagger & Follow-up Reminders.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.skool.com/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+       "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.skool.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png", "js-confetti.browser.js", "modal.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
